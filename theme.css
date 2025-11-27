@@ -422,6 +422,10 @@ body {
   --background-modifier-hover: var(--color-base-20);
 }
 
+.document-search-container .clickable-icon:hover {
+  --icon-color-hover: var(--light-ink-alt);
+}
+
     /* Reading view */
 .markdown-reading-view button {
   --button-radius: 4px;
