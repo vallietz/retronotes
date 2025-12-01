@@ -424,6 +424,7 @@ body {
 
 .document-search-container .clickable-icon:hover {
   --icon-color-hover: var(--light-ink-alt);
+  --icon-color-focused: var(--light-ink-alt);
 }
 
     /* Reading view */
@@ -936,6 +937,7 @@ button:focus-visible {
   --nav-indentation-guide-color: var(--light-ink-fainted);
   --checkbox-marker-color: var(--color-base-10);
   --tag-color: var(--color-base-00);
+  --text-selection: rgba(var(--color-base-50-rgb),0.5);
 }
 
   /* Menu */
