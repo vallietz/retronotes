@@ -19,13 +19,14 @@ Notice that I build this theme for myself and probably will not work with most o
 ## Retro Style
 ### Philosophy
 RetroNotes 2.0 embraces a minimalist path to productivity.
+
 **RetroNotes principles**:
 - **Less is More**: we don't need flashy elements to work, only a satisfying color palette.
 - **No Distraction**: only highlighted the essential.
 - **Writing-Centered**: everything is about the writing experience.
 
 ### Additional Themes
-There are four additional light color schemes and five dark color schemes to suit different preferences and moods. Each theme provides a unique visual experience combining aesthetics and functionality.
+There are four additional light color schemes and five dark color schemes to suit different preferences and moods. Each theme provides an unique visual experience combining aesthetics and functionality.
 
 ## My Plugin Selection
 - [Better Word Count by Luke Leppan](https://github.com/lukeleppan/better-word-count)
