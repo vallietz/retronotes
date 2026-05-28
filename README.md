@@ -4,26 +4,26 @@ A personal [Obsidian](https://obsidian.md) theme by **Rubén Campelo**.
 <p align="center"><img src="/.github/screenshots/retronotes-default.jpg" alt="Light and dark themes screenshots"></p>
 
 ## Warning
-Notice that I build this theme for myself and probably will not work with most of the plugins because of the contrast colors. Feel free to add issues and pull requests. I will work on them to improve your experience.
+Please note that I built this theme for myself, and it may not work well with many plugins due to contrast and color choices.
+Currently, my entire workflow is based on NeoVim, so I do not check Obsidian frequently. This means that if something breaks, I might not notice it immediately.
+
+If you enjoy the theme, I encourage you to open issues or submit pull requests. I will review and work on them to improve your experience.
 
 ### Tested Plugin Compatibility
 - [x] [Calendar by @liamcain](https://github.com/liamcain/obsidian-calendar-plugin)
 
-## Retro Style 2.0.0 changes
-- **Minimalist Redesign**: Removed superfluous elements like paper texture.
-- **Typography simplification**: Removed Loew title font to improve visual consistency.
-- **Performance Optimization**: Better syntax using more Obsidian variables. It makes it easier to change and play with them.
-- **Writing-Focused**: Redesigned to minimiza distractions and maximiza productivity.
-- **Corrected errors** Improved colors and color compatibility.
-
 ## Retro Style
 ### Philosophy
-RetroNotes 2.0 embraces a minimalist path to productivity.
+RetroNotes 2.0 embraces a minimalist approach to productivity.
 
 **RetroNotes principles**:
-- **Less is More**: we don't need flashy elements to work, only a satisfying color palette.
-- **No Distraction**: only highlighted the essential.
-- **Writing-Centered**: everything is about the writing experience.
+- **Less is More**: No need for flashy elements to work. (Only a satisfying color palette :P).
+- **No Distraction**: Only the essential are highlighted.
+- **Writing-Centered**: Everything is designed around the writing experience.
+
+### IBM Plex Mono
+The typography is embebed on the code, so you don't need to install anything.
+All the text use IBM Plex Mono, so if you like monospace fonts, you will enjoy the experience.
 
 ### Additional Themes
 There are four additional light color schemes and five dark color schemes to suit different preferences and moods. Each theme provides an unique visual experience combining aesthetics and functionality.
