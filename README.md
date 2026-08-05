@@ -1,40 +1,60 @@
 # RetroNotes
-A personal [Obsidian](https://obsidian.md) theme by **Rubén Campelo**.
 
-<p align="center"><img src="/.github/screenshots/retronotes-default.jpg" alt="Light and dark themes screenshots"></p>
+A writing-centered [Obsidian](https://obsidian.md) theme by [Rubén Campelo](https://rubencampelo.com).
 
-## Warning
-Please note that I built this theme for myself, and it may not work well with many plugins due to contrast and color choices.
-Currently, my entire workflow is based on NeoVim, so I do not check Obsidian frequently. This means that if something breaks, I might not notice it immediately.
+<p align="center">
+  <img src="cover.jpg" alt="RetroNotes — Parchments and Midnight Journal">
+</p>
 
-If you enjoy the theme, I encourage you to open issues or submit pull requests. I will review and work on them to improve your experience.
+Warm palettes, embedded **IBM Plex Mono**, and eleven schemes you can switch with Style Settings.
 
-### Tested Plugin Compatibility
-- [x] [Calendar by @liamcain](https://github.com/liamcain/obsidian-calendar-plugin)
+## Features
 
-## Retro Style
-### Philosophy
-RetroNotes 2.0 embraces a minimalist approach to productivity.
+- **Less is more** — a calm UI with a satisfying color palette, not flashy chrome
+- **No distraction** — only the essentials are highlighted
+- **Writing-centered** — layout and typography built around long-form notes
+- **IBM Plex Mono** — embedded in the theme; no font install required
+- **Style Settings** — pick light and dark schemes independently
 
-**RetroNotes principles**:
-- **Less is More**: No need for flashy elements to work. (Only a satisfying color palette :P).
-- **No Distraction**: Only the essential are highlighted.
-- **Writing-Centered**: Everything is designed around the writing experience.
+## Color schemes
 
-### IBM Plex Mono
-The typography is embebed on the code, so you don't need to install anything.
-All the text use IBM Plex Mono, so if you like monospace fonts, you will enjoy the experience.
+Eleven palettes (five light, six dark). Defaults are **Parchments** and **Midnight Journal**.
 
-### Additional Themes
-There are four additional light color schemes and five dark color schemes to suit different preferences and moods. Each theme provides an unique visual experience combining aesthetics and functionality.
+### Light
 
-## My Plugin Selection
-- [Better Word Count by Luke Leppan](https://github.com/lukeleppan/better-word-count)
-- [Calendar by @liamcain](https://github.com/liamcain/obsidian-calendar-plugin)
-- [Latex Suite by artisticat](https://github.com/artisticat1/obsidian-latex-suite)
-- [Quick Switcher++ by darlal](https://github.com/darlal/obsidian-switcher-plus)
-- [Smart Typography by @mgmeyers](https://github.com/mgmeyers/obsidian-smart-typography)
-- [Style Settings Plugin by @mgmeyers](https://github.com/mgmeyers/obsidian-style-settings). This plugin will aloud you to switch to the alternative colorschemes.
-- [Templater by SilentVoid](https://github.com/SilentVoid13/Templater)
-- [Typewriter Scroll by @death_au](https://github.com/deathau/cm-typewriter-scroll-obsidian)
+<p align="center">
+  <img src=".github/screenshots/gallery-light.jpg" alt="Light color schemes: Parchments, Ivory Pages, Sunny Memos, Vintage Papers, Mint Leaves">
+</p>
 
+Parchments · Ivory Pages · Sunny Memos · Vintage Papers · Mint Leaves
+
+### Dark
+
+<p align="center">
+  <img src=".github/screenshots/gallery-dark.jpg" alt="Dark color schemes: Midnight Journal, Carbon Ink, Forest Green, Blueprint, Pinot Noir, Misty Mirage">
+</p>
+
+Midnight Journal · Carbon Ink · Forest Green · Blueprint · Pinot Noir · Misty Mirage
+
+Install [Style Settings](https://github.com/mgmeyers/obsidian-style-settings) to switch schemes from the settings panel.
+
+## Note
+
+This is a personal theme. Contrast and color choices may not suit every plugin. Issues and pull requests are welcome — I will review them when I can.
+
+**Tested with:** [Calendar](https://github.com/liamcain/obsidian-calendar-plugin) by @liamcain
+
+## Recommended plugins
+
+- [Better Word Count](https://github.com/lukeleppan/better-word-count) by Luke Leppan
+- [Calendar](https://github.com/liamcain/obsidian-calendar-plugin) by @liamcain
+- [Latex Suite](https://github.com/artisticat1/obsidian-latex-suite) by artisticat
+- [Quick Switcher++](https://github.com/darlal/obsidian-switcher-plus) by darlal
+- [Smart Typography](https://github.com/mgmeyers/obsidian-smart-typography) by @mgmeyers
+- [Style Settings](https://github.com/mgmeyers/obsidian-style-settings) by @mgmeyers — required to switch alternative color schemes
+- [Templater](https://github.com/SilentVoid13/Templater) by SilentVoid
+- [Typewriter Scroll](https://github.com/deathau/cm-typewriter-scroll-obsidian) by @death_au
+
+---
+
+Made by [Rubén Campelo](https://rubencampelo.com)
