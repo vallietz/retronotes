@@ -373,12 +373,23 @@ body {
 
     /* Tabs */
 .workspace-tab-header:not(.is-active)[data-type='canvas'] .workspace-tab-header-inner,
-.workspace-tab-header:not(.is-active)[data-type='bases'] .workspace-tab-header-inner,
+.workspace-tab-header:not(.is-active)[data-type='release-notes'] .workspace-tab-header-inner,
+.workspace-tab-header-container .workspace-tab-header:not(.is-active)[data-type='bases'] .workspace-tab-header-inner,
 .workspace-tab-header:not(.is-active)[data-type='graph'] .workspace-tab-header-inner,
 .workspace-tab-header:not(.is-active)[data-type='localgraph'] .workspace-tab-header-inner,
 .workspace-tab-header:not(.is-active)[data-type='markdown'] .workspace-tab-header-inner {
   background-color: var(--color-base-20);
 }
+
+.workspace-tab-header-container .workspace-tab-header:not(.is-active)[data-type='canvas']:hover .workspace-tab-header-inner,
+.workspace-tab-header-container .workspace-tab-header:not(.is-active)[data-type='release-notes']:hover .workspace-tab-header-inner,
+.workspace-tab-header-container .workspace-tab-header:not(.is-active)[data-type='bases']:hover .workspace-tab-header-inner,
+.workspace-tab-header-container .workspace-tab-header:not(.is-active)[data-type='graph']:hover .workspace-tab-header-inner,
+.workspace-tab-header-container .workspace-tab-header:not(.is-active)[data-type='localgraph']:hover .workspace-tab-header-inner,
+.workspace-tab-header-container .workspace-tab-header:not(.is-active)[data-type='markdown']:hover .workspace-tab-header-inner {
+  background-color: var(--color-base-25)
+}
+
 
     /* Header */
 .cm-formatting-header {
@@ -740,7 +751,7 @@ kbd {
 }
 
 .workspace-tab-header-container .workspace-tab-header:not(.is-active):hover .workspace-tab-header-inner {
-  background-color: var(--color-base-10);
+  background-color: var(--leather-color-alt);
 }
 
 .titlebar-inner {
@@ -768,7 +779,8 @@ kbd {
 .theme-light .modal.mod-settings .vertical-tab-header .vertical-tab-nav-item:hover,
 .retro-dm-misty-mirage .modal.mod-settings .vertical-tab-header .vertical-tab-nav-item:hover .vertical-tab-nav-item-icon,
 .retro-dm-misty-mirage .modal.mod-settings .vertical-tab-header .vertical-tab-nav-item:hover {
-  color: var(--color-base-20);
+  color: var(--color-base-50);
+  font-weight: 600;
 }
 
 .theme-light .modal.mod-settings .vertical-tab-header .vertical-tab-nav-item.is-active .vertical-tab-nav-item-icon,
