@@ -136,11 +136,11 @@ body {
 
   /* Tabs */
   --tab-background-active: var(--color-base-10);
-  --tab-text-color: var(---main-ink-fainted);
-  --tab-text-color-active: var(---main-ink-muted);
-  --tab-text-color-focused: var(---main-ink-fainted);
-  --tab-text-color-focused-active: var(---main-ink-muted);
-  --tab-text-color-focused-highlighted: var(---main-ink-muted);
+  --tab-text-color: var(--main-ink-fainted);
+  --tab-text-color-active: var(--main-ink-muted);
+  --tab-text-color-focused: var(--main-ink-fainted);
+  --tab-text-color-focused-active: var(--main-ink-muted);
+  --tab-text-color-focused-highlighted: var(--main-ink-muted);
   --tab-font-weight: 600;
   --tab-divider-color: none;
   --tab-outline-color: var(--color-base-30);
@@ -2284,4 +2284,51 @@ section[class*="tw-bg-interactive-accent"] [class~="tw-bg-primary"] :is(a, .tw-t
   .tree-item:focus-within > .tag-pane-tag
 ) .tag-pane-tag-count {
   background-color: var(--leather-color) !important;
+}
+
+/* Workspace tabs need an explicit state system. The previous rules styled
+   only several inactive data types, leaving the active tab dependent on a
+   subtle default token. */
+.workspace-split.mod-root .workspace-tab-header-container .workspace-tab-header:not(.is-active) .workspace-tab-header-inner {
+  background-color: var(--color-base-20);
+  color: var(--main-ink-muted);
+  box-shadow: inset 0 -2px 0 transparent;
+}
+
+.workspace-split.mod-root .workspace-tab-header-container .workspace-tab-header:not(.is-active):hover .workspace-tab-header-inner {
+  background-color: var(--color-base-25);
+  color: var(--main-ink);
+}
+
+.workspace-split.mod-root .workspace-tab-header-container .workspace-tab-header.is-active .workspace-tab-header-inner {
+  background-color: var(--color-base-00);
+  color: var(--main-ink);
+  font-weight: 700;
+  box-shadow: inset 0 -3px 0 #3F345E;
+}
+
+.workspace-split.mod-root .workspace-tab-header-container .workspace-tab-header.is-active .workspace-tab-header-inner :is(
+  .workspace-tab-header-inner-title,
+  .workspace-tab-header-inner-icon,
+  .workspace-tab-header-inner-close-button
+) {
+  color: var(--main-ink);
+}
+
+:is(.workspace-split.mod-left-split, .workspace-split.mod-right-split) .workspace-tab-header-container .workspace-tab-header:not(.is-active) .workspace-tab-header-inner {
+  background-color: var(--leather-color);
+  color: var(--light-ink-muted);
+  box-shadow: inset 0 -2px 0 transparent;
+}
+
+:is(.workspace-split.mod-left-split, .workspace-split.mod-right-split) .workspace-tab-header-container .workspace-tab-header:not(.is-active):hover .workspace-tab-header-inner {
+  background-color: var(--leather-color-alt);
+  color: var(--light-ink-alt);
+}
+
+:is(.workspace-split.mod-left-split, .workspace-split.mod-right-split) .workspace-tab-header-container .workspace-tab-header.is-active .workspace-tab-header-inner {
+  background-color: var(--leather-color-alt);
+  color: var(--light-ink-alt);
+  font-weight: 700;
+  box-shadow: inset 0 -3px 0 #3F345E;
 }
