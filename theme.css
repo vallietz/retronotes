@@ -809,11 +809,13 @@ kbd {
 
 body:not(.is-phone) .community-item.is-selected {
   --text-on-accent: var(--light-ink-muted);
+  background-color: rgba(var(--color-blue-rgb), 0.48) !important;
 }
 
 body:not(.is-phone) .community-item:not(.is-selected) .community-item-downloads svg {
   color: var(--leather-color-alt);
 }
+
 
 .modal.mod-settings .qsp-tag {
   padding: 2px 4px;
@@ -1434,3 +1436,852 @@ settings:
           value: retro-dm-misty-mirage
   */
 
+
+/* Contrast Clean surface system.
+   A surface changes semantic color variables. Text utilities and native
+   controls then resolve against the nearest surface instead of inheriting a
+   forced foreground from an unrelated parent. */
+body {
+  --surface-primary-normal: var(--main-ink);
+  --surface-primary-muted: var(--main-ink-muted);
+  --surface-primary-faint: var(--main-ink-fainted);
+  --surface-primary-accent: var(--secondary-ink);
+
+  --surface-secondary-normal: var(--light-ink);
+  --surface-secondary-muted: var(--light-ink-muted);
+  --surface-secondary-faint: var(--light-ink-fainted);
+  --surface-secondary-accent: var(--light-ink-alt);
+}
+
+/* Light/content surfaces, including nested cards and plugin panels. */
+:is(
+  [class~="tw-bg-primary"],
+  [class~="!tw-bg-primary"],
+  [class~="tw-bg-primary-alt"],
+  [class~="!tw-bg-primary-alt"]
+) {
+  --background-primary: var(--color-base-00);
+  --background-primary-alt: var(--color-base-10);
+  --text-normal: var(--surface-primary-normal);
+  --text-muted: var(--surface-primary-muted);
+  --text-faint: var(--surface-primary-faint);
+  --text-accent: var(--surface-primary-accent);
+  --icon-color: var(--surface-primary-muted);
+  --icon-color-hover: var(--surface-primary-normal);
+  --interactive-normal: var(--color-base-30);
+  --interactive-hover: var(--color-base-20);
+  --interactive-accent: var(--surface-primary-accent);
+  --interactive-accent-hover: var(--main-ink);
+  --text-on-accent: var(--color-base-00);
+  --link-color: var(--surface-primary-accent);
+  --link-color-hover: var(--secondary-ink-muted);
+  --code-normal: var(--surface-primary-normal);
+  --code-background: rgba(var(--color-base-50-rgb), 0.2);
+  --h1-color: var(--surface-primary-normal);
+  --h2-color: var(--surface-primary-normal);
+  --h3-color: var(--surface-primary-normal);
+  --h4-color: var(--surface-primary-normal);
+  --h5-color: var(--surface-primary-normal);
+  --h6-color: var(--surface-primary-normal);
+  color: var(--text-normal);
+}
+
+[class~="tw-bg-primary"] { background-color: var(--color-base-00); }
+[class~="!tw-bg-primary"] { background-color: var(--color-base-00) !important; }
+[class~="tw-bg-primary-alt"] { background-color: var(--color-base-10); }
+[class~="!tw-bg-primary-alt"] { background-color: var(--color-base-10) !important; }
+
+/* Purple/chrome surfaces, including portals mounted directly under body. */
+:is(
+  [class~="tw-bg-secondary"],
+  [class~="!tw-bg-secondary"],
+  [class~="tw-bg-secondary-alt"],
+  [class~="!tw-bg-secondary-alt"]
+) {
+  --background-secondary: var(--leather-color);
+  --background-secondary-alt: var(--leather-color-alt);
+  --text-normal: var(--surface-secondary-normal);
+  --text-muted: var(--surface-secondary-muted);
+  --text-faint: var(--surface-secondary-faint);
+  --text-accent: var(--surface-secondary-accent);
+  --icon-color: var(--surface-secondary-muted);
+  --icon-color-hover: var(--surface-secondary-normal);
+  --interactive-normal: var(--leather-color-alt);
+  --interactive-hover: var(--leather-color);
+  --interactive-accent: var(--surface-secondary-accent);
+  --interactive-accent-hover: var(--surface-secondary-normal);
+  --text-on-accent: var(--surface-primary-normal);
+  --link-color: var(--surface-secondary-accent);
+  --link-color-hover: var(--surface-secondary-normal);
+  --code-normal: var(--surface-secondary-normal);
+  --code-background: var(--leather-color-alt);
+  --h1-color: var(--surface-secondary-normal);
+  --h2-color: var(--surface-secondary-normal);
+  --h3-color: var(--surface-secondary-normal);
+  --h4-color: var(--surface-secondary-normal);
+  --h5-color: var(--surface-secondary-normal);
+  --h6-color: var(--surface-secondary-normal);
+  color: var(--text-normal);
+}
+
+[class~="tw-bg-secondary"] { background-color: var(--leather-color); }
+[class~="!tw-bg-secondary"] { background-color: var(--leather-color) !important; }
+[class~="tw-bg-secondary-alt"] { background-color: var(--leather-color-alt); }
+[class~="!tw-bg-secondary-alt"] { background-color: var(--leather-color-alt) !important; }
+
+/* Stateful utility classes change the background only while active. Switch
+   the foreground contract in the same state so buttons, tabs and menu rows
+   cannot become light-on-light or dark-on-dark. */
+:is(
+  [class*="hover:tw-bg-primary"]:hover,
+  [class*="focus:tw-bg-primary"]:focus,
+  [class*="data-[state=selected]:tw-bg-primary"][data-state="selected"],
+  [class*="data-[highlighted]:tw-bg-primary"][data-highlighted]
+) {
+  --text-normal: var(--surface-primary-normal);
+  --text-muted: var(--surface-primary-muted);
+  --text-faint: var(--surface-primary-faint);
+  --text-accent: var(--surface-primary-accent);
+  --icon-color: var(--surface-primary-muted);
+  background-color: var(--color-base-10) !important;
+  color: var(--text-normal);
+}
+
+:is(
+  [class*="hover:tw-bg-secondary"]:hover,
+  [class*="focus:tw-bg-secondary"]:focus,
+  [class*="data-[state=selected]:tw-bg-secondary"][data-state="selected"],
+  [class*="data-[highlighted]:tw-bg-secondary"][data-highlighted]
+) {
+  --text-normal: var(--surface-secondary-normal);
+  --text-muted: var(--surface-secondary-muted);
+  --text-faint: var(--surface-secondary-faint);
+  --text-accent: var(--surface-secondary-accent);
+  --icon-color: var(--surface-secondary-muted);
+  background-color: var(--leather-color-alt) !important;
+  color: var(--text-normal);
+}
+
+/* Accent components own both halves of the color pair. This prevents an
+   ancestor surface from turning a blue/purple CTA into same-color text. */
+:is(
+  button.mod-cta,
+  .mod-cta,
+  [class~="tw-bg-accent"],
+  [class~="!tw-bg-accent"],
+  [class~="tw-bg-interactive-accent"],
+  [class~="!tw-bg-interactive-accent"]
+) {
+  --text-normal: var(--text-on-accent);
+  --text-muted: var(--text-on-accent);
+  --text-faint: var(--text-on-accent);
+  --icon-color: var(--text-on-accent);
+  --icon-color-hover: var(--text-on-accent);
+  color: var(--text-on-accent);
+}
+
+/* Native controls use a content/form-field background even when they live on
+   a purple surface, so they reset to the primary foreground palette. */
+:is(input, textarea, select, .dropdown, .combobox-button) {
+  --text-normal: var(--surface-primary-normal);
+  --text-muted: var(--surface-primary-muted);
+  --text-faint: var(--surface-primary-faint);
+  --text-accent: var(--surface-primary-accent);
+  color: var(--text-normal);
+}
+
+:is(input, textarea, select, .dropdown, .combobox-button):not(.overlay-validator):not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="color"]) {
+  background-color: var(--form-field-background) !important;
+  color: var(--surface-primary-normal) !important;
+}
+
+:is(input, textarea, select, .dropdown, .combobox-button):not(.overlay-validator):not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="color"]):is(:hover, :focus, :focus-visible) {
+  background-color: var(--form-field-background-hover) !important;
+}
+
+:is(input, textarea, select, .dropdown, .combobox-button):not(.overlay-validator):not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="color"]):disabled {
+  background-color: var(--form-field-background-disabled) !important;
+  opacity: 0.65;
+}
+
+:is(input, textarea)::placeholder {
+  color: var(--form-field-placeholder) !important;
+  font-style: italic;
+  opacity: 1;
+}
+
+/* Tailwind's 60% muted utility becomes too faint on textured/purple panels. */
+.tw-text-muted\/60 {
+  color: var(--text-muted) !important;
+}
+
+/* Keep keyboard focus visible on both palettes. */
+:where(button, a, input, textarea, select, [role="tab"]):focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+/* Obsidian declares its light-theme tokens on .theme-light, which is more
+   specific than RetroNotes' original body rule. Reassert the complete palette
+   on the active scheme so native views and plugins receive one coherent set. */
+body.theme-light.retro-lm-ivory-pages {
+  --selection-background: #3F345E;
+  --selection-foreground: var(--color-base-00);
+  --sidebar-row-hover-background: var(--leather-color-alt);
+  --sidebar-row-selected-background: color-mix(in srgb, var(--leather-color-alt) 82%, var(--color-base-00));
+  --sidebar-row-selected-marker: var(--light-ink-alt);
+  --highlight-foreground: var(--main-ink);
+  --form-field-background: color-mix(in srgb, var(--color-base-00) 72%, var(--color-base-05));
+  --form-field-background-hover: var(--color-base-00);
+  --form-field-background-disabled: var(--color-base-10);
+  --form-field-placeholder: rgba(var(--main-ink-rgb), 0.55);
+  --background-primary: var(--color-base-00);
+  --background-primary-alt: var(--color-base-10);
+  --background-secondary: var(--leather-color);
+  --background-secondary-alt: var(--leather-color-alt);
+  --background-modifier-hover: var(--color-base-20);
+  --background-modifier-active-hover: var(--color-base-25);
+  --background-modifier-form-field: var(--form-field-background);
+  --background-modifier-form-field-hover: var(--form-field-background-hover);
+  --background-modifier-border: var(--color-base-50);
+  --background-modifier-border-hover: var(--color-base-60);
+  --background-modifier-border-focus: var(--secondary-ink);
+  --background-modifier-message: var(--leather-color-alt);
+  --background-modifier-success: var(--color-green);
+  --background-modifier-error: var(--color-red);
+  --background-modifier-error-hover: var(--color-red);
+
+  --text-normal: var(--main-ink);
+  --text-muted: var(--main-ink-muted);
+  --text-faint: var(--main-ink-fainted);
+  --text-accent: var(--secondary-ink);
+  --text-accent-hover: var(--secondary-ink-muted);
+  --text-on-accent: var(--color-base-00);
+  --text-on-accent-inverted: var(--color-base-00);
+  --text-error: var(--color-red);
+  --text-success: var(--color-green);
+
+  --icon-color: var(--main-ink-muted);
+  --icon-color-hover: var(--main-ink);
+  --icon-color-active: var(--secondary-ink);
+  --icon-color-focused: var(--main-ink);
+  --interactive-normal: var(--color-base-20);
+  --interactive-hover: var(--color-base-30);
+  --interactive-accent: var(--secondary-ink);
+  --interactive-accent-hover: var(--main-ink);
+
+  --tab-text-color: var(--main-ink-fainted);
+  --tab-text-color-active: var(--main-ink-muted);
+  --tab-text-color-focused: var(--main-ink-fainted);
+  --tab-text-color-focused-active: var(--main-ink-muted);
+  --tab-text-color-focused-highlighted: var(--main-ink);
+  --tab-text-color-focused-active-current: var(--main-ink);
+}
+
+/* Copilot chat and Agent are full purple sidebar surfaces. Bind links and
+   accent text to that surface at the view boundary; nested light utility
+   cards keep their own primary-surface contract above. */
+:is(
+  .workspace-leaf-content[data-type="copilot-chat-view"],
+  .workspace-leaf-content[data-type="copilot-agent-chat-view"]
+) {
+  --text-accent: var(--surface-secondary-accent);
+  --text-accent-hover: var(--surface-secondary-normal);
+  --link-color: var(--surface-secondary-accent);
+  --link-color-hover: var(--surface-secondary-normal);
+  --link-external-color: var(--surface-secondary-accent);
+  --link-external-color-hover: var(--surface-secondary-normal);
+}
+
+/* Copilot lists sit on light cards, but their hover rows use the purple
+   modifier surface. Switch the whole foreground contract with that state. */
+:is(
+  .workspace-leaf-content[data-type="copilot-chat-view"],
+  .workspace-leaf-content[data-type="copilot-agent-chat-view"]
+) [class~="hover:tw-bg-modifier-hover"]:hover {
+  --text-normal: var(--surface-secondary-normal);
+  --text-muted: var(--surface-secondary-muted);
+  --text-faint: var(--surface-secondary-faint);
+  --text-accent: var(--surface-secondary-accent);
+  --icon-color: var(--surface-secondary-muted);
+  --icon-color-hover: var(--surface-secondary-normal);
+  color: var(--text-normal);
+}
+
+/* Toggles keep RetroNotes' native track/thumb pairing in both the main window
+   and Obsidian's detached settings window, whose root has no modal ancestor. */
+.theme-light .checkbox-container {
+  --toggle-thumb-color: var(--color-base-00);
+  background-color: var(--color-base-60) !important;
+}
+
+.theme-light .checkbox-container.is-enabled {
+  background-color: var(--leather-color-alt) !important;
+}
+
+.theme-light .checkbox-container::after {
+  background-color: var(--toggle-thumb-color) !important;
+}
+
+/* Copilot License is rendered on a purple settings surface but marks links
+   with tw-text-accent. Give that surface both normal and hover foregrounds;
+   the nested white offer card restores the primary link palette. */
+section[class*="tw-bg-interactive-accent"] {
+  --interactive-accent: var(--surface-secondary-accent);
+  --interactive-accent-hover: var(--surface-secondary-normal);
+  --text-on-accent: var(--surface-primary-normal);
+  --text-accent: var(--surface-secondary-accent);
+  --text-accent-hover: var(--surface-secondary-normal);
+  --link-color: var(--surface-secondary-accent);
+  --link-color-hover: var(--surface-secondary-normal);
+}
+
+section[class*="tw-bg-interactive-accent"] :is(a, .tw-text-accent) {
+  color: #d7cfb7 !important;
+}
+
+section[class*="tw-bg-interactive-accent"] :is(a, .tw-text-accent):hover {
+  color: #faf9f6 !important;
+}
+
+section[class*="tw-bg-interactive-accent"] [class~="tw-bg-primary"] {
+  --text-accent: var(--surface-primary-accent);
+  --text-accent-hover: var(--secondary-ink-muted);
+  --interactive-accent: var(--surface-primary-accent);
+  --interactive-accent-hover: var(--main-ink);
+  --text-on-accent: var(--color-base-00);
+  --link-color: var(--surface-primary-accent);
+  --link-color-hover: var(--secondary-ink-muted);
+}
+
+section[class*="tw-bg-interactive-accent"] [class~="tw-bg-primary"] :is(a, .tw-text-accent) {
+  color: #1e3d6d !important;
+}
+
+section[class*="tw-bg-interactive-accent"] [class~="tw-bg-primary"] :is(a, .tw-text-accent):hover {
+  color: #03060a !important;
+}
+
+/* Compact Copilot accent controls (for example the Projects add button)
+   use an HSL tint utility. Render them as real blue controls with a paired
+   light foreground instead of inheriting the beige license-panel palette. */
+[class~="tw-bg-interactive-accent-hsl/10"] {
+  --text-normal: var(--color-base-00);
+  --text-muted: var(--color-base-00);
+  --text-accent: var(--color-base-00);
+  --icon-color: var(--color-base-00);
+  background-color: var(--surface-primary-accent) !important;
+  color: var(--color-base-00);
+}
+
+/* Copilot's inline agent tabs sit directly on the purple settings canvas.
+   The page-level tabs use a different rounded shape and keep their normal
+   purple-on-light selection treatment. */
+.mod-settings [role="tab"][aria-selected="true"][class~="tw-rounded-md"] {
+  --text-normal: var(--surface-primary-normal);
+  --text-muted: var(--surface-primary-muted);
+  --icon-color: var(--surface-primary-normal);
+  --text-on-accent: var(--surface-primary-normal);
+  background-color: var(--color-base-00) !important;
+  border-color: var(--light-ink-alt) !important;
+  color: var(--surface-primary-normal) !important;
+  box-shadow: 0 0 0 1px var(--light-ink-alt);
+}
+
+.mod-settings [role="tab"][aria-selected="true"][class~="tw-rounded-md"] * {
+  color: var(--surface-primary-normal) !important;
+  --icon-color: var(--surface-primary-normal);
+}
+
+/* Yellow search/mark highlights are light surfaces, so their foreground must
+   never inherit the white text of a purple sidebar. */
+:is(
+  .search-result-file-matched-text,
+  .suggestion-highlight,
+  .is-flashing,
+  mark,
+  .cm-highlight,
+  .cm-formatting-highlight
+) {
+  color: var(--highlight-foreground) !important;
+}
+
+:is(
+  .search-result-file-matched-text,
+  .suggestion-highlight,
+  .is-flashing,
+  mark,
+  .cm-highlight,
+  .cm-formatting-highlight
+) :is(a, .internal-link, .external-link) {
+  color: var(--highlight-foreground) !important;
+}
+
+/* ChatGPT MD provider headers use --background-secondary inside a light
+   settings page. Bind their foreground to that purple surface as well. */
+.chatgpt-md-collapsible-group > summary {
+  --text-normal: var(--surface-secondary-normal);
+  --text-muted: var(--surface-secondary-muted);
+  --icon-color: var(--surface-secondary-normal);
+  background-color: var(--leather-color) !important;
+  color: var(--surface-secondary-normal) !important;
+}
+
+.chatgpt-md-collapsible-group > summary:is(:hover, :focus-visible),
+.chatgpt-md-collapsible-group[open] > summary {
+  background-color: var(--leather-color-alt) !important;
+  color: var(--surface-secondary-normal) !important;
+}
+
+/* Claudian components that paint --background-secondary must also switch all
+   foreground tokens to the secondary palette. */
+:is(
+  .claudian-history-archive-control,
+  .claudian-history-menu,
+  .claudian-message-content th,
+  .claudian-nav-btn:hover,
+  .claudian-nav-toc-item:hover,
+  .claudian-nav-toc-item:focus,
+  .claudian-model-dropdown,
+  .claudian-thinking-options,
+  .claudian-external-context-dropdown,
+  .claudian-mention-dropdown,
+  .claudian-message-image,
+  .claudian-image-modal-close,
+  .claudian-inline-preview-actions button.claudian-inline-preview-action,
+  .claudian-slash-dropdown,
+  .claudian-resume-dropdown,
+  .claudian-resume-item.current,
+  .claudian-ask-approval-tool,
+  .claudian-instruction-original,
+  .claudian-sp-empty-state,
+  .claudian-sp-item,
+  .claudian-context-limits-item,
+  .claudian-snippet-empty,
+  .claudian-snippet-item,
+  .claudian-snippet-preview,
+  .claudian-plugin-empty,
+  .claudian-plugin-item,
+  .claudian-provider-model-picker-selected,
+  .claudian-provider-model-picker-catalog
+) {
+  --text-normal: var(--surface-secondary-normal);
+  --text-muted: var(--surface-secondary-muted);
+  --text-faint: var(--surface-secondary-faint);
+  --text-accent: var(--surface-secondary-accent);
+  --icon-color: var(--surface-secondary-muted);
+  --icon-color-hover: var(--surface-secondary-normal);
+  --link-color: var(--surface-secondary-accent);
+  --link-color-hover: var(--surface-secondary-normal);
+  color: var(--surface-secondary-normal);
+}
+
+/* Active settings navigation uses one selection contract: accent background
+   with a readable foreground and icon. */
+:is(
+  .modal.mod-settings .vertical-tab-nav-item.is-active,
+  .modal.mod-settings .vertical-tab-nav-item[aria-selected="true"],
+  .modal.mod-settings .vertical-tab-nav-item.is-selected
+) {
+  --text-normal: var(--selection-foreground);
+  --text-muted: var(--selection-foreground);
+  --icon-color: var(--selection-foreground);
+  --icon-color-hover: var(--selection-foreground);
+  background-color: var(--selection-background) !important;
+  color: var(--selection-foreground) !important;
+}
+
+:is(
+  .modal.mod-settings .vertical-tab-nav-item.is-active,
+  .modal.mod-settings .vertical-tab-nav-item[aria-selected="true"],
+  .modal.mod-settings .vertical-tab-nav-item.is-selected
+) :is(.vertical-tab-nav-item-icon, svg) {
+  color: var(--selection-foreground) !important;
+  --icon-color: var(--selection-foreground);
+}
+
+/* The settings view has several equivalent active-state class names across
+   Obsidian versions. Keep their selection colors consistent as one system. */
+:is(
+  .modal.mod-settings .vertical-tab-nav-item.is-active,
+  .modal.mod-settings .vertical-tab-nav-item.is-selected,
+  .modal.mod-settings .vertical-tab-nav-item[aria-selected="true"],
+  .modal.mod-settings .setting-item.is-active,
+  .modal.mod-settings .setting-item.is-selected,
+  .modal.mod-settings [role="tab"][aria-selected="true"]
+) {
+  --text-normal: var(--selection-foreground);
+  --text-muted: var(--selection-foreground);
+  --text-faint: var(--selection-foreground);
+  --icon-color: var(--selection-foreground);
+  --icon-color-hover: var(--selection-foreground);
+  background-color: var(--selection-background) !important;
+  color: var(--selection-foreground) !important;
+}
+
+:is(
+  .modal.mod-settings .vertical-tab-nav-item.is-active,
+  .modal.mod-settings .vertical-tab-nav-item.is-selected,
+  .modal.mod-settings .vertical-tab-nav-item[aria-selected="true"],
+  .modal.mod-settings .setting-item.is-active,
+  .modal.mod-settings .setting-item.is-selected,
+  .modal.mod-settings [role="tab"][aria-selected="true"]
+) * {
+  color: var(--selection-foreground) !important;
+  --icon-color: var(--selection-foreground);
+}
+
+/* Native dark-purple surfaces. Keep every semantic foreground in the same
+   scope as its background, including views rendered in body-level portals. */
+:is(
+  .workspace-split.mod-left-split,
+  .workspace-split.mod-right-split,
+  .workspace-ribbon,
+  .titlebar,
+  .titlebar-inner,
+  .menu,
+  .suggestion-container,
+  .prompt,
+  .tooltip,
+  .graph-controls,
+  .is-mobile .workspace-drawer,
+  .is-mobile .workspace-drawer-header
+) {
+  --background-primary: var(--leather-color);
+  --background-primary-alt: var(--leather-color-alt);
+  --background-secondary: var(--leather-color);
+  --background-secondary-alt: var(--leather-color-alt);
+  --background-modifier-hover: var(--leather-color-alt);
+  --text-normal: var(--surface-secondary-normal);
+  --text-muted: var(--surface-secondary-muted);
+  --text-faint: var(--surface-secondary-faint);
+  --text-accent: var(--surface-secondary-accent);
+  --icon-color: var(--surface-secondary-muted);
+  --icon-color-hover: var(--surface-secondary-normal);
+  --icon-color-active: var(--surface-secondary-normal);
+  --icon-color-focused: var(--surface-secondary-normal);
+  --interactive-normal: var(--leather-color-alt);
+  --interactive-hover: var(--leather-color);
+  --tab-text-color: var(--surface-secondary-muted);
+  --tab-text-color-active: var(--surface-secondary-normal);
+  --tab-text-color-focused: var(--surface-secondary-muted);
+  --tab-text-color-focused-active: var(--surface-secondary-normal);
+  --tab-text-color-focused-highlighted: var(--surface-secondary-normal);
+  --tab-text-color-focused-active-current: var(--surface-secondary-normal);
+  --link-color: var(--surface-secondary-accent);
+  --link-color-hover: var(--surface-secondary-normal);
+  --h1-color: var(--surface-secondary-normal);
+  --h2-color: var(--surface-secondary-normal);
+  --h3-color: var(--surface-secondary-normal);
+  --h4-color: var(--surface-secondary-normal);
+  --h5-color: var(--surface-secondary-normal);
+  --h6-color: var(--surface-secondary-normal);
+  color: var(--text-normal);
+}
+
+/* Content panes embedded inside purple sidebars are light surfaces of their
+   own and must not inherit the sidebar's light foreground. */
+:is(
+  .workspace-split.mod-sidedock .markdown-source-view,
+  .workspace-split.mod-sidedock .markdown-reading-view,
+  .workspace-split.mod-sidedock .cm-editor,
+  .workspace-split.mod-sidedock iframe,
+  .workspace-split.mod-left-split .markdown-source-view,
+  .workspace-split.mod-left-split .markdown-reading-view,
+  .workspace-split.mod-left-split .cm-editor,
+  .workspace-split.mod-right-split .markdown-source-view,
+  .workspace-split.mod-right-split .markdown-reading-view,
+  .workspace-split.mod-right-split .cm-editor,
+  .modal,
+  .modal.mod-settings,
+  .community-modal,
+  .prompt-input-container,
+  .menu input,
+  .menu textarea,
+  .menu select,
+  .menu .dropdown,
+  .suggestion-container input
+) {
+  --text-normal: var(--surface-primary-normal);
+  --text-muted: var(--surface-primary-muted);
+  --text-faint: var(--surface-primary-faint);
+  --text-accent: var(--surface-primary-accent);
+  --icon-color: var(--surface-primary-muted);
+  --icon-color-hover: var(--surface-primary-normal);
+  --icon-color-active: var(--surface-primary-accent);
+  --interactive-normal: var(--color-base-20);
+  --interactive-hover: var(--color-base-30);
+  --interactive-accent: var(--surface-primary-accent);
+  --interactive-accent-hover: var(--main-ink);
+  --link-color: var(--surface-primary-accent);
+  --h1-color: var(--surface-primary-normal);
+  --h2-color: var(--surface-primary-normal);
+  --h3-color: var(--surface-primary-normal);
+  --h4-color: var(--surface-primary-normal);
+  --h5-color: var(--surface-primary-normal);
+  --h6-color: var(--surface-primary-normal);
+  color: var(--text-normal);
+}
+
+/* Plugin dialogs use a light card inside the purple chrome. Their own link
+   rule may still use the sidebar beige, so bind links to the card surface. */
+:is(
+  .modal,
+  .community-modal,
+  .modal-container .mod-raised,
+  .prompt-input-container,
+  .prompt-results
+) :is(a, .external-link) {
+  --link-color: var(--surface-primary-accent);
+  --link-color-hover: var(--surface-primary-normal);
+  color: var(--text-accent) !important;
+}
+
+:is(
+  .modal,
+  .community-modal,
+  .modal-container .mod-raised,
+  .prompt-input-container,
+  .prompt-results
+) :is(a, .external-link):hover {
+  color: var(--text-accent-hover, var(--text-normal)) !important;
+}
+
+:is(.suggestion-container, .prompt, .menu) {
+  background-color: var(--leather-color);
+}
+
+:is(.prompt, .suggestion-container) .suggestion-item.is-selected {
+  --text-normal: var(--surface-secondary-normal);
+  --text-muted: var(--surface-secondary-muted);
+  --icon-color: var(--surface-secondary-normal);
+  background-color: var(--leather-color-alt);
+  color: var(--text-normal);
+}
+
+:is(.prompt, .suggestion-container) :is(.suggestion-title, .suggestion-item:not(.is-selected)) {
+  color: var(--surface-secondary-normal);
+}
+
+/* Explicit status contracts: success, warning and destructive actions keep
+   their labels and icons readable when plugins replace only the background. */
+:is(.mod-warning, .mod-destructive, [class*="bg-error"], [class*="bg-red-"]) {
+  --text-normal: var(--color-base-00);
+  --text-muted: var(--color-base-00);
+  --icon-color: var(--color-base-00);
+  background-color: var(--color-red) !important;
+  color: var(--color-base-00);
+}
+
+:is(.mod-success, [class*="bg-success"], [class*="bg-green-"]) {
+  --text-normal: var(--color-base-00);
+  --text-muted: var(--color-base-00);
+  --icon-color: var(--color-base-00);
+  background-color: #3f6f34 !important;
+  color: var(--color-base-00);
+}
+
+/* Links are frequently styled directly by plugins, bypassing Obsidian's
+   --link-color variable. On purple surfaces force the readable light link
+   pair so a dark-blue anchor cannot land on a blue/purple background. */
+:is(
+  .menu,
+  .prompt,
+  .suggestion-container,
+  .tooltip,
+  [class~="tw-bg-secondary"],
+  [class~="!tw-bg-secondary"],
+  [class~="tw-bg-secondary-alt"],
+  [class~="!tw-bg-secondary-alt"]
+) a,
+:is(
+  .menu,
+  .prompt,
+  .suggestion-container,
+  .tooltip,
+  [class~="tw-bg-secondary"],
+  [class~="!tw-bg-secondary"],
+  [class~="tw-bg-secondary-alt"],
+  [class~="!tw-bg-secondary-alt"]
+) .external-link {
+  --link-color: var(--surface-secondary-accent);
+  --link-color-hover: var(--surface-secondary-normal);
+  color: var(--surface-secondary-accent) !important;
+}
+
+:is(
+  .menu,
+  .prompt,
+  .suggestion-container,
+  .tooltip,
+  [class~="tw-bg-secondary"],
+  [class~="!tw-bg-secondary"],
+  [class~="tw-bg-secondary-alt"],
+  [class~="!tw-bg-secondary-alt"]
+) a:hover {
+  color: var(--surface-secondary-normal) !important;
+}
+
+/* Both sidebars share one interaction contract. A row behaves identically in
+   the file tree, backlinks, outgoing links and search results. */
+:is(.workspace-split.mod-left-split, .workspace-split.mod-right-split) :is(
+  .tree-item-self.is-active,
+  .tree-item-self.is-selected,
+  .tree-item-self.has-focus,
+  .tree-item-self[aria-selected="true"],
+  .tree-item-self:hover,
+  .nav-file-title.is-active,
+  .nav-file-title.is-selected,
+  .nav-file-title.has-focus,
+  .nav-file-title[aria-selected="true"],
+  .nav-file-title:hover,
+  .nav-folder-title.is-active,
+  .nav-folder-title.is-selected,
+  .nav-folder-title.has-focus,
+  .nav-folder-title[aria-selected="true"],
+  .nav-folder-title:hover,
+  .search-result.is-active,
+  .search-result.is-selected,
+  .search-result.has-focus,
+  .search-result:hover,
+  .search-result-file-title.is-active,
+  .search-result-file-title.is-selected,
+  .search-result-file-title.has-focus,
+  .search-result-file-title:hover,
+  .tag-pane-tag.is-active,
+  .tag-pane-tag.is-selected,
+  .tag-pane-tag.has-focus,
+  .tree-item.has-focus > .tag-pane-tag,
+  .tag-pane-tag[aria-selected="true"],
+  .tag-pane-tag:hover
+) {
+  --text-normal: var(--surface-secondary-normal);
+  --text-muted: var(--surface-secondary-muted);
+  --text-faint: var(--surface-secondary-faint);
+  --icon-color: var(--surface-secondary-normal);
+  --icon-color-hover: var(--surface-secondary-normal);
+  --nav-collapse-icon-color: var(--surface-secondary-normal);
+  background-color: var(--sidebar-row-hover-background) !important;
+  color: var(--surface-secondary-normal) !important;
+}
+
+:is(.workspace-split.mod-left-split, .workspace-split.mod-right-split) :is(
+  .tree-item-self.is-active,
+  .tree-item-self.is-selected,
+  .tree-item-self.has-focus,
+  .tree-item-self[aria-selected="true"],
+  .tree-item-self:hover,
+  .nav-file-title.is-active,
+  .nav-file-title.is-selected,
+  .nav-file-title.has-focus,
+  .nav-file-title[aria-selected="true"],
+  .nav-file-title:hover,
+  .nav-folder-title.is-active,
+  .nav-folder-title.is-selected,
+  .nav-folder-title.has-focus,
+  .nav-folder-title[aria-selected="true"],
+  .nav-folder-title:hover,
+  .search-result.is-active,
+  .search-result.is-selected,
+  .search-result.has-focus,
+  .search-result:hover,
+  .search-result-file-title.is-active,
+  .search-result-file-title.is-selected,
+  .search-result-file-title.has-focus,
+  .search-result-file-title:hover,
+  .tag-pane-tag.is-active,
+  .tag-pane-tag.is-selected,
+  .tag-pane-tag.has-focus,
+  .tree-item.has-focus > .tag-pane-tag,
+  .tag-pane-tag[aria-selected="true"],
+  .tag-pane-tag:hover
+) :is(.nav-file-title-content, .nav-folder-title-content, .tree-item-inner, .tree-item-icon, .tree-item-flair, .collapse-icon, .tag-pane-tag-name, .tag-pane-tag-count, a, svg) {
+  color: var(--surface-secondary-normal) !important;
+  --icon-color: var(--surface-secondary-normal);
+}
+
+/* Selection is intentionally stronger than hover so the currently open file
+   remains obvious even when the pointer is elsewhere. */
+:is(.workspace-split.mod-left-split, .workspace-split.mod-right-split) :is(
+  .tree-item-self.is-active,
+  .tree-item-self.is-selected,
+  .tree-item-self.has-focus,
+  .tree-item-self[aria-selected="true"],
+  .nav-file-title.is-active,
+  .nav-file-title.is-selected,
+  .nav-file-title.has-focus,
+  .nav-file-title[aria-selected="true"],
+  .nav-folder-title.is-active,
+  .nav-folder-title.is-selected,
+  .nav-folder-title.has-focus,
+  .nav-folder-title[aria-selected="true"],
+  .search-result.is-active,
+  .search-result.is-selected,
+  .search-result.has-focus,
+  .search-result-file-title.is-active,
+  .search-result-file-title.is-selected,
+  .search-result-file-title.has-focus,
+  .tag-pane-tag.is-active,
+  .tag-pane-tag.is-selected,
+  .tag-pane-tag.has-focus,
+  .tree-item.has-focus > .tag-pane-tag,
+  .tag-pane-tag[aria-selected="true"]
+) {
+  background-color: var(--sidebar-row-selected-background) !important;
+  box-shadow: inset 3px 0 0 var(--sidebar-row-selected-marker);
+}
+
+:is(.workspace-split.mod-left-split, .workspace-split.mod-right-split) :is(
+  .tag-pane-tag:is(.is-active, .is-selected, .has-focus, [aria-selected="true"]),
+  .tree-item.has-focus > .tag-pane-tag
+)
+  .tag-pane-tag-count {
+  background-color: var(--leather-color) !important;
+  color: var(--surface-secondary-normal) !important;
+}
+
+/* Tag pane may live in a sidebar, popout, or nested workspace leaf. Its
+   selection contract therefore must not depend on a split ancestor. */
+:is(
+  .tag-pane-tag.is-active,
+  .tag-pane-tag.is-selected,
+  .tag-pane-tag.has-focus,
+  .tag-pane-tag[aria-selected="true"],
+  .tag-pane-tag:focus,
+  .tag-pane-tag:focus-visible,
+  .tree-item.has-focus > .tag-pane-tag,
+  .tree-item:focus-within > .tag-pane-tag
+) {
+  --text-normal: var(--surface-secondary-normal);
+  --text-muted: var(--surface-secondary-muted);
+  --icon-color: var(--surface-secondary-normal);
+  background-color: var(--sidebar-row-selected-background) !important;
+  color: var(--surface-secondary-normal) !important;
+  box-shadow: inset 3px 0 0 var(--sidebar-row-selected-marker) !important;
+}
+
+:is(
+  .tag-pane-tag.is-active,
+  .tag-pane-tag.is-selected,
+  .tag-pane-tag.has-focus,
+  .tag-pane-tag[aria-selected="true"],
+  .tag-pane-tag:focus,
+  .tag-pane-tag:focus-visible,
+  .tree-item.has-focus > .tag-pane-tag,
+  .tree-item:focus-within > .tag-pane-tag
+) :is(.tag-pane-tag-name, .tree-item-inner, .tag-pane-tag-count) {
+  color: var(--surface-secondary-normal) !important;
+}
+
+:is(
+  .tag-pane-tag.is-active,
+  .tag-pane-tag.is-selected,
+  .tag-pane-tag.has-focus,
+  .tag-pane-tag[aria-selected="true"],
+  .tag-pane-tag:focus,
+  .tag-pane-tag:focus-visible,
+  .tree-item.has-focus > .tag-pane-tag,
+  .tree-item:focus-within > .tag-pane-tag
+) .tag-pane-tag-count {
+  background-color: var(--leather-color) !important;
+}
