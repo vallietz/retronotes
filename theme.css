@@ -2304,7 +2304,7 @@ section[class*="tw-bg-interactive-accent"] [class~="tw-bg-primary"] :is(a, .tw-t
   background-color: var(--color-base-00);
   color: var(--main-ink);
   font-weight: 700;
-  box-shadow: inset 0 -3px 0 #3F345E;
+  box-shadow: inset 0 3px 0 #3F345E, inset -2px 0 0 #3F345E, inset 2px 0 0 #3F345E;
 }
 
 .workspace-split.mod-root .workspace-tab-header-container .workspace-tab-header.is-active .workspace-tab-header-inner :is(
@@ -2330,5 +2330,5 @@ section[class*="tw-bg-interactive-accent"] [class~="tw-bg-primary"] :is(a, .tw-t
   background-color: var(--leather-color-alt);
   color: var(--light-ink-alt);
   font-weight: 700;
-  box-shadow: inset 0 -3px 0 #3F345E;
+  box-shadow: inset 3px 0 0 var(--light-ink-alt), inset 0 -3px 0 #3F345E;
 }
