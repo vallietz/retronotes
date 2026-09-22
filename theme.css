@@ -2292,7 +2292,7 @@ section[class*="tw-bg-interactive-accent"] [class~="tw-bg-primary"] :is(a, .tw-t
 .workspace-split.mod-root .workspace-tab-header-container .workspace-tab-header:not(.is-active) .workspace-tab-header-inner {
   background-color: #3F345E;
   color: var(--light-ink-alt);
-  box-shadow: inset 0 0 0 1px rgba(var(--color-base-00-rgb), 0.65);
+  box-shadow: none;
 }
 
 .workspace-split.mod-root .workspace-tab-header-container .workspace-tab-header:not(.is-active):hover .workspace-tab-header-inner {
@@ -2322,7 +2322,7 @@ section[class*="tw-bg-interactive-accent"] [class~="tw-bg-primary"] :is(a, .tw-t
 :is(.workspace-split.mod-left-split, .workspace-split.mod-right-split) .workspace-tab-header-container .workspace-tab-header:not(.is-active) .workspace-tab-header-inner {
   background-color: var(--leather-color);
   color: var(--light-ink-muted);
-  box-shadow: inset 0 0 0 1px rgba(var(--color-base-00-rgb), 0.65);
+  box-shadow: none;
 }
 
 :is(.workspace-split.mod-left-split, .workspace-split.mod-right-split) .workspace-tab-header-container .workspace-tab-header:not(.is-active):hover .workspace-tab-header-inner {
@@ -2339,4 +2339,8 @@ section[class*="tw-bg-interactive-accent"] [class~="tw-bg-primary"] :is(a, .tw-t
   color: var(--main-ink);
   font-weight: 700;
   box-shadow: inset 0 -3px 0 #3F345E;
+}
+
+.workspace-tab-header-container-inner {
+  gap: 2px;
 }
